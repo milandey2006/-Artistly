@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Search, Eye, CheckCircle, XCircle, Clock } from "lucide-react"
 
-// Mock data - you can replace this with real data later
+
 const mockArtistSubmissions = [
   {
     id: "1",
@@ -52,7 +52,7 @@ export default function DashboardPage() {
   const [statusFilter, setStatusFilter] = useState("all")
   const [searchTerm, setSearchTerm] = useState("")
 
-  // Filter submissions based on status and search
+
   const filteredSubmissions = submissions.filter((submission) => {
     const matchesStatus = statusFilter === "all" || submission.status === statusFilter
     const matchesSearch = 
@@ -61,7 +61,7 @@ export default function DashboardPage() {
     return matchesStatus && matchesSearch
   })
 
-  // Update submission status
+
   const updateStatus = (id, newStatus) => {
     setSubmissions((prev) =>
       prev.map((submission) => 
@@ -70,14 +70,14 @@ export default function DashboardPage() {
     )
   }
 
-  // Get status icon
+
   const getStatusIcon = (status) => {
     if (status === "approved") return <CheckCircle className="h-4 w-4 text-green-500" />
     if (status === "rejected") return <XCircle className="h-4 w-4 text-red-500" />
     return <Clock className="h-4 w-4 text-yellow-500" />
   }
 
-  // Get status badge
+
   const getStatusBadge = (status) => {
     let variant = "secondary"
     if (status === "approved") variant = "default"
@@ -93,13 +93,12 @@ export default function DashboardPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       
-      {/* Header */}
+
       <div className="mb-8">
         <h1 className="text-3xl font-bold mb-2">Manager Dashboard</h1>
         <p className="text-gray-600">Review and manage artist applications and booking requests.</p>
       </div>
 
-      {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
@@ -148,7 +147,7 @@ export default function DashboardPage() {
         </Card>
       </div>
 
-      {/* Main Content */}
+
       <Card className="mb-6">
         <CardHeader>
           <CardTitle>Artist Applications</CardTitle>
@@ -156,7 +155,7 @@ export default function DashboardPage() {
         </CardHeader>
         <CardContent>
           
-          {/* Search and Filter */}
+
           <div className="flex flex-col sm:flex-row gap-4 mb-6">
             <div className="relative flex-1">
               <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
@@ -179,20 +178,20 @@ export default function DashboardPage() {
             </select>
           </div>
 
-          {/* Applications List */}
+
           <div className="space-y-4">
             {filteredSubmissions.map((submission) => (
               <div key={submission.id} className="border rounded-lg p-4">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   
-                  {/* Artist Info */}
+
                   <div className="flex-1">
                     <div className="font-medium text-lg">{submission.name}</div>
                     <div className="text-sm text-gray-600 mb-2">{submission.email}</div>
                     <div className="text-sm text-gray-600 mb-2">{submission.location}</div>
                     <div className="text-sm font-medium mb-2">{submission.priceRange}</div>
                     
-                    {/* Categories */}
+
                     <div className="flex flex-wrap gap-1">
                       {submission.categories.map((category) => (
                         <Badge key={category} variant="outline" className="text-xs">
@@ -202,15 +201,14 @@ export default function DashboardPage() {
                     </div>
                   </div>
 
-                  {/* Status and Actions */}
                   <div className="flex flex-col items-end gap-3">
-                    {/* Status */}
+
                     <div className="flex items-center gap-2">
                       {getStatusIcon(submission.status)}
                       {getStatusBadge(submission.status)}
                     </div>
 
-                    {/* Action Buttons */}
+
                     <div className="flex gap-2">
                       {submission.status === "pending" && (
                         <>
@@ -245,7 +243,7 @@ export default function DashboardPage() {
             ))}
           </div>
 
-          {/* No Results Message */}
+
           {filteredSubmissions.length === 0 && (
             <div className="text-center py-8">
               <p className="text-gray-600">No applications found matching your criteria.</p>

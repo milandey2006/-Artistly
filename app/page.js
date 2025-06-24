@@ -12,7 +12,6 @@ const page = () => {
       <Hero />
       <Category />
       <FeaturedArtists />
-
     </div>
   )
 }

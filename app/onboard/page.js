@@ -11,12 +11,12 @@ const languages = ["English", "Spanish", "French", "German", "Italian", "Portugu
 const priceRanges = ["$500 - $1,000", "$1,000 - $2,500", "$2,500 - $5,000", "$5,000 - $10,000", "$10,000+"]
 
 export default function ArtistForm() {
-  // Simple state - just track if form is submitted
+
   const [isSubmitted, setIsSubmitted] = useState(false)
   
-  // Handle form submission
+
   const handleSubmit = () => {
-    // Get all form values
+
     const name = document.getElementById('name').value
     const email = document.getElementById('email').value
     const phone = document.getElementById('phone').value
@@ -24,17 +24,17 @@ export default function ArtistForm() {
     const bio = document.getElementById('bio').value
     const priceRange = document.getElementById('priceRange').value
     
-    // Get selected categories
+
     const selectedCategories = categories.filter(category => 
       document.getElementById(`category-${category}`).checked
     )
     
-    // Get selected languages
+
     const selectedLanguages = languages.filter(language => 
       document.getElementById(`language-${language}`).checked
     )
     
-    // Simple validation
+
     if (!name || !email || !phone || !location || !bio) {
       alert('Please fill in all required fields')
       return
@@ -60,18 +60,18 @@ export default function ArtistForm() {
       return
     }
     
-    // Log the form data
+
     console.log('Form Data:', {
       name, email, phone, location, bio, priceRange,
       categories: selectedCategories,
       languages: selectedLanguages
     })
     
-    // Show success
+
     setIsSubmitted(true)
   }
 
-  // Show success message after submission
+
   if (isSubmitted) {
     return (
       <div className="container mx-auto px-4 py-16">
@@ -91,7 +91,7 @@ export default function ArtistForm() {
     )
   }
 
-  // Main form
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-2xl mx-auto">
@@ -104,7 +104,7 @@ export default function ArtistForm() {
           </CardHeader>
           <CardContent className="space-y-6">
             
-            {/* Basic Information */}
+       
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">Basic Information</h3>
 
@@ -141,7 +141,7 @@ export default function ArtistForm() {
               </div>
             </div>
 
-            {/* Categories */}
+         
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">Performance Categories *</h3>
               <p className="text-sm text-gray-600">What type of performances do you offer?</p>
@@ -161,7 +161,7 @@ export default function ArtistForm() {
               </div>
             </div>
 
-            {/* Languages */}
+    
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">Languages *</h3>
               <p className="text-sm text-gray-600">What languages can you perform in?</p>
@@ -181,7 +181,7 @@ export default function ArtistForm() {
               </div>
             </div>
 
-            {/* Pricing */}
+   
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">Pricing *</h3>
               <div>
@@ -200,7 +200,7 @@ export default function ArtistForm() {
               </div>
             </div>
 
-            {/* Submit Button */}
+        
             <Button onClick={handleSubmit} className="w-full" size="lg">
               Submit Application
             </Button>

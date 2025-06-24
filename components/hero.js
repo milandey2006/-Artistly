@@ -30,7 +30,7 @@ export function Hero() {
             </Button>
           </div>
 
-          {/* Stats */}
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
             <div className="flex flex-col items-center">
               <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-3">
