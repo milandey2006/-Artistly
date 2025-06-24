@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Artistly - Connect with Talented Artists",
-  description: "Artistly is the premier platform connecting event planners with professional performing artists. Find the perfect talent for your event or showcase your skills to potential clients.",
+  description: "Artistly is the premier platform connecting event planners with professional performing artists. Find the perfect talent for your event or showcase your skills to potential clients. ",
 };
 
 export default function RootLayout({ children }) {
