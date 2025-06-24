@@ -80,7 +80,7 @@ export default function ArtistForm() {
             <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
             <h2 className="text-2xl font-bold mb-2">Application Submitted!</h2>
             <p className="text-gray-600 mb-4">
-              Thank you for joining Artistly. We'll review your profile and contact you within 24 hours.
+              Thank you for joining Artistly. We will review your profile and contact you within 24 hours.
             </p>
             <Button onClick={() => setIsSubmitted(false)}>
               Submit Another Application
